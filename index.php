@@ -3,11 +3,9 @@ include('db_config.php');
 
 $selected_area = isset($_GET['area_id']) ? intval($_GET['area_id']) : 1;
 
-// ડ્રોપડાઉન માટે એરિયા ફેચ કરવા
 $areas_query = "SELECT * FROM areas";
 $areas_result = $conn->query($areas_query);
 
-// સિલેક્ટ કરેલા એરિયાના સ્લોટ્સ ફેચ કરવા
 $slots_query = "SELECT * FROM parking_slots WHERE area_id = $selected_area";
 $slots_result = $conn->query($slots_query);
 ?>
