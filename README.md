@@ -97,6 +97,7 @@ Migrate project repository PHP scripts (index.php, book_slot.php, etc.) into /va
 Database Connection Configuration: Open db_config.php and swap localhost with the AWS RDS Endpoint string generated in your RDS console panel. Update username/password credentials accordingly.
 
 
+
 ## 📸 Complete Deployment Proof & Live App Workflow (12 Screenshots)
 
 Here is the step-by-step visual proof of the successful 2-Tier deployment on AWS Cloud and the full working lifecycle of the application:
