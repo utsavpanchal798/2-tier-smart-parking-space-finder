@@ -8,7 +8,7 @@ A lightweight, real-time **Smart Parking Space Finder** built using a robust **2
 ## 📐 Architecture Overview
 This application follows the industry-standard **2-Tier Architecture**:
 
-![Smart Parking 2-Tier Architecture](./images/architecture-diagram.png)
+![Smart Parking 2-Tier Architecture](./architecture-diagram.png)
 
 1. **Presentation & Application Tier (Web Server):**
    * Built with **HTML5, Bootstrap 5, and JavaScript** for a clean, responsive UI.
