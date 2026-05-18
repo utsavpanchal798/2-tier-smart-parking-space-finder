@@ -64,6 +64,7 @@ CREATE TABLE IF NOT EXISTS `bookings` (
   `booking_time` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   FOREIGN KEY (`slot_id`) REFERENCES `parking_slots`(`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 ☁️ Step-by-Step AWS Cloud Deployment Guide
 Follow these sequential environment steps to deploy the 2-Tier framework onto Amazon Web Services:
 
@@ -98,45 +99,3 @@ Database Connection Configuration: Open db_config.php and swap localhost with th
 
 
 
-## 📸 Complete Deployment Proof & Live App Workflow (12 Screenshots)
-
-Here is the step-by-step visual proof of the successful 2-Tier deployment on AWS Cloud and the full working lifecycle of the application:
-
-### 1. AWS Cloud Infrastructure Setup
-* **AWS Custom VPC Dashboard:** Confirms the creation of `smart-parking-vpc` with CIDR `10.0.0.0/16`.
-  ![VPC Dashboard](Screenshorts/01_aws_vpc_dashboard.png)
-
-* **Internet Gateway (IGW):** Attached `smart-parking-igw` to allow external public HTTP traffic.
-  ![Internet Gateway](Screenshorts/02_aws_internet_gateway.png)
-
-* **Subnet Segmentation:** Network divided cleanly into Public Subnets (for Web EC2) and Private Subnets (for Isolated Database).
-  ![Subnets Configuration](Screenshorts/03_aws_subnets_configuration.png)
-
-* **Security Groups (Firewalls):** Setup `Web-Server-SG` to handle public ports, restricting direct backend exposures.
-  ![Security Groups](Screenshorts/04_aws_security_groups.png)
-
-* **Amazon RDS MySQL Database:** Running live in the private tier under `smart-parking-db-instance` with internet access disabled.
-  ![RDS Instance](Screenshorts/05_aws_rds_mysql_instanc.png)
-
-### 2. Live Application Preview
-* **Production Live Preview:** The operational Smart Parking Space Finder application served smoothly via the EC2 Public IP address.
-  ![Live Application](Screenshorts/06_live_web_application.png)
-
-### 3. Core Application Workflow (End-to-End Database Integration)
-* **Slot Booking Process:** User triggers an interactive modal popup to input vehicle details.
-  ![Booking Process](Screenshorts/07_booking_modal_popup.png)
-
-* **Database Confirmation:** A backend-driven browser alert confirms a successful entry into the AWS RDS MySQL tier.
-  ![Booking Success](Screenshorts/08_slot_booked_success_alert.png)
-
-* **Real-time UI Update (Full State):** The reserved slot status instantly changes to Red (Full) to prevent double-booking.
-  ![Booked Slot Status](Screenshorts/09_booked_slot_red_status.png)
-
-* **Releasing a Parking Slot:** Authorized actions can trigger a removal configuration prompt.
-  ![Release Confirmation](Screenshorts/10_release_slot_confirmatio.png)
-
-* **Database Clearance:** System flushes the entry and triggers a safe clearance alert.
-  ![Slot Cleared Alert](Screenshorts/11_slot_cleared_success_alert.png)
-
-* **Available State Restored (Empty State):** The system updates live, resetting the partition status back to Green (Empty).
-  ![Cleared Slot Status](Screenshorts/12_cleared_slot_green_status.png)
