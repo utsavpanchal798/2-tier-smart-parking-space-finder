@@ -7,11 +7,11 @@ if (isset($_POST['book_now'])) {
     $area_id = intval($_POST['area_id']);
 
     if (!empty($vehicle_number)) {
-        // ૧. બુકિંગ ટેબલમાં એન્ટ્રી કરવી
+   
         $insert_query = "INSERT INTO bookings (slot_id, vehicle_number) VALUES ($slot_id, '$vehicle_number')";
         
         if ($conn->query($insert_query) === TRUE) {
-            // ૨. પાર્કિંગ સ્લોટનું સ્ટેટસ બદલીને 'Booked' કરવું
+         
             $update_query = "UPDATE parking_slots SET status = 'Booked' WHERE id = $slot_id";
             $conn->query($update_query);
             
